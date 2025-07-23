@@ -1,69 +1,54 @@
-# React + TypeScript + Vite
+# Adivinhe a Palavra
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um jogo simples de adivinhação de palavras desenvolvido com React e TypeScript. O objetivo do jogo é adivinhar uma palavra secreta com base em uma dica, dentro de um limite de tentativas.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*   **React:** Biblioteca JavaScript para construção de interfaces de usuário.
+*   **TypeScript:** Superset do JavaScript que adiciona tipagem estática, melhorando a robustez e manutenibilidade do código.
+*   **Vite:** Ferramenta de build frontend que oferece uma experiência de desenvolvimento extremamente rápida.
 
-## Expanding the ESLint configuration
+## Padrões de Projeto e Boas Práticas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+O projeto foi desenvolvido com foco em:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+*   **Componentização:** A interface é dividida em componentes reutilizáveis, facilitando a manutenção e escalabilidade.
+*   **Estado Gerenciado:** Utilização de `useState` do React para gerenciar o estado da aplicação de forma eficiente.
+*   **Código Limpo e Legível:** Priorização de um código claro, conciso e bem estruturado.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Setup e Configuração
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Para rodar o projeto localmente, siga os passos abaixo:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/MSixels/Adivinhe.git
+    ```
+2.  **Navegue até o diretório do projeto:**
+    ```bash
+    cd Adivinhe
+    ```
+3.  **Instale as dependências:**
+    ```bash
+    npm install
+    # ou yarn install
+    ```
+4.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    npm run dev
+    # ou yarn dev
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+O jogo estará disponível em `http://localhost:5173` (ou outra porta indicada pelo Vite).
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Como Jogar
+
+1.  O jogo irá apresentar uma dica para a palavra secreta.
+2.  Insira seu palpite no campo de texto.
+3.  Clique em "Adivinhar" para verificar se seu palpite está correto.
+4.  O jogo informará se você acertou ou não, e o número de tentativas restantes.
+5.  Continue adivinhando até acertar a palavra ou esgotar as tentativas.
+
+Divirta-se!
+
+
